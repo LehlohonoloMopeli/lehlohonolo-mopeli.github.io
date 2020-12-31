@@ -1,0 +1,391 @@
+/* define borders */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;                   /* creates a boarder all around the page */
+}
+
+/* custom properties */
+
+:root {
+    --ff-primary: 'Source Sans Pro'- sans-serif;                                
+    --ff-secondary: 'Roboto Mono', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #000000;
+    --clr-grey: #595959;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+body {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0%;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;                   /* creates spacing left and right of 5em, and top and bottom of 2em */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+:focus {                                            /* everything focus state */
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;                            /* removes all decorations around a text */
+    cursor: pointer; 
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 10ms ease-in-out;          /* makes the button responsive */
+}
+
+.btn:hover { 
+    transform: scale(1.1);                            /* Hover function in a button (1.1 chooses how big it becomes) */
+}
+
+
+/* Typography */
+
+h1,
+h2, 
+h3 {
+    line-height: 1rem;
+    margin:0%;
+}
+
+h1 {font-size: var(--fs-h1)}
+h2 {font-size: var(--fs-h2)}
+h3 {font-size: var(--fs-h3)}
+
+.section__title {
+    margin-bottom: .5em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+    margin-bottom: .5em;
+    padding-top: 25px;
+}
+
+.section__title--intro strong {
+    display: block;
+    margin-top: .8em;
+}
+
+.section__title--intro strong strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0%;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background-color: var(--clr-accent);
+    padding: .25em 1em;                      /* shifts the "full-stack dev" section to the left */
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;                      /* Gives spacing at the bottom */
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: right;
+    padding: 1em;
+}
+
+.nav__button {
+    justify-content: right;
+    margin-left: 97%;
+}
+
+.nav {
+    position: fixed;
+    background-color: var(--clr-grey);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: var(--clr-light);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav__link:hover{
+    color: var(--clr-accent); 
+}
+
+.hamburger {
+    background: var(--clr-dark);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    display: block;
+    position: relative;
+}
+
+.nav-toggle {
+    justify-content: left;
+}
+
+
+/* Intro section */
+
+.intro {
+    position: relative;                     /* creates spacing between items in the intro section and border */
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;                      /* aligns the contents in this section into a grid and recognises them as iindividual components */
+        width: min-content;
+        margin: 0 auto;                     /* aligns the content in the grid at the center and makes them responsive */
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+            grid-template-columns: min-content min-content;   /* min content makes more sense, but I have to separate my names */
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;                         /* makes sure the picture is on top of the "full-stack dev" section " */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /* this has its own section because we want to style it different from section__subtitle--about */
+    .section__subtitle--intro {
+        align-self: start;                       /* allows this section to align itself and stop stretching */
+        grid-column: -1/1;                       /* stretches the "full-stack dev" section throughout the grid */
+        grid-row: 2;                             /* puts the "full-stack dev" section towards the center of the page but under my name */
+        text-align: right;                       /* self axplanatory */
+        position: relative;                      /* gives independence and dominance to the "full-stack dev" section */ 
+        left: -1.5em;                            /* shifts the "full-stack dev" section to the left by 1.5em */
+        width: calc(100% + 1.5em);               /* resizes the "full-stack dev" section to fit */
+    }
+}
+
+
+/* My Services section */
+
+.my-services {
+    background-color: var(--clr-grey);           /*  Choose a background color in case the picture isn't available */
+    background-image: url(../img/wallpaper5.jpg);
+    background-size: cover;
+    /* background-blend-mode: multiply; */        /* makes the background color darker */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    border-bottom: 1px solid;
+    max-width: 3em;
+}
+
+.service__heading {
+    margin-bottom: 10px;
+}
+
+.service__paragraph {
+    margin-bottom: 50px;
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        grid-column-gap: 3em;
+    }
+}
+
+
+/* About Me section */
+
+.about-me {
+    position: relative;                     /* creates spacing between items inn the intro section and border */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (min-width: 800px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--about {
+        grid-area: title;
+        margin-top: 25px;
+    }
+
+    .section__subtitle--about {
+        grid-area: subtitle;
+        grid-column: -1/1;
+        grid-row: 2;
+        align-self: start;
+        position: relative;
+        text-align: left;
+        left: -1em;                            /* shifts the "full-stack dev" section to the left by 1em */
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 8em);
+    }
+
+    .about-me__body {
+        grid-column: 1;
+        margin-top: -3em;
+    }
+
+    .about-me__img {
+        grid-row: -1/1;
+        grid-column: 2;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+/* My Portfolio section */
+
+.my-portfolio {
+    background-color: var(--clr-grey);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--portfolio {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));         /* aligns pics in a grid format according to how many can fit the screen size */ 
+}
+
+.portfolio__img {
+    transition:                                                         /* have to search what is to transitio or transform an image */
+        750ms cubic-bezier(0.075, 0.82, 0.165, 1)
+        opacity 1s linear;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);                                              /* controls how big the image becomes when you hover */
+    opacity: 0.8;                                                       /* controls how clear the image is when you hover */
+}
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Footer Section */
+
+.footer {
+    background-color: var(--clr-dark);
+    text-align: center;
+}
+
+.footer__link {
+    color: var(--clr-accent);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover {
+    color: var(--clr-grey);
+}
+
+
+
+/* get styling, font, and social icons from "fontawesome.com" */
