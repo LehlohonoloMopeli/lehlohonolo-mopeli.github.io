@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Website</title>
+        <link rel = "stylesheet"
+        href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel = "stylesheet"
+        href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity= "sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+        <!-- Google fonts used in this website. Link to the website (https://fonts.google.com/) -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&family=Roboto+Mono:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+        
+
+        <!-- Link to css style sheet -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+        <header>
+
+            <div class="nav__button">
+                <button class = "nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="portfolio" class="nav__link">My Portfolio</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Aloha, I am <strong>Lehlohonolo <strong>Mopeli</strong></strong>
+            </h1> 
+            <p class="section__subtitle section__subtitle--intro">FULL-STACK DEV</p>
+
+            <img src="img/profile.jpg" alt="" class="intro__img">
+        </section>
+
+
+        <!-- My Services -->
+        <section class="my-services" id="services">
+            <h2 class="section__title section__title--services">What I do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3 class="service__heading">
+                        Design
+                    </h3>
+                    <p class="service__paragraph">
+                        I use Adobe xd to design animated web applications. I also design 
+                        logos and websites.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3 class="service__heading">
+                        Front-end Development
+                    </h3>
+                    <p class="service__paragraph">
+                    Tools I use: HTML, Bootstrap, Javascript, ReactJS, Css. and python-flask 
+                    framework. I can build responsive web applications as well as build 
+                    animations into them. Well versed in modern web development tools, 
+                    especially the MERN stack.
+                    </p>
+                </div>
+
+                <div class="service">
+                    <h3 class="service__heading">
+                        Back-end Development
+                    </h3>
+                    <p class="service__paragraph">
+                        Tools I use: Mysql, NodeJs, and Python.
+                    </p>
+                </div>
+            </div>
+
+            <a href="work" class="btn">My Work</a>
+
+        </section>
+
+
+        <!-- About Me-->
+        <section class="about-me" id="about">
+            <h2 class="section__title section__title--about">About Me</h2>
+            <p class="section__subtitle section__subtitle--about">
+                Self taught full-stack developer 
+            </p>
+
+            <div class="about-me__body">
+                <p>I started programming in September 2020 as a backend developer for an accounting 
+                    software. I was uniquely suited for this role because of my background in finance.
+                    Since then I have come a long way and learned full stack and I am still growing.
+                    Soon I will be adding the MERN stack tools to my portfolio.
+                </p>
+                <p></p>
+            </div>
+
+            <img src="img/profile4.jpg" alt="" class="about-me__img"> 
+        </section>
+
+
+        <!--My Portfolio-->
+        <section class="my-portfolio" id="portfolio">
+            <h2 class="section__title section__title--portfolio">My Portfolio</h2>
+            <p class="section_subtitle section__subtitle--portfolio">Work I have done</p>
+
+            <!-- Portfolio item 1 -->
+            <div class="portfolio">
+                <a href="#" class="portfolio__item">
+                    <img src="img/Amazon.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 2 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/Netflix.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 3 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/spotify.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 4 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/sage.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 5 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/Ecommerce.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 6 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/Instagram.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 7 -->
+                <a href="#" class="portfolio__item">
+                    <img src="img/covid19.jpg" alt="" class="portfolio__img">
+                </a>
+            </div>
+
+        </section>
+
+
+        <!--Footer-->
+
+        
+        <footer>
+            <div class="footer">
+                <a href="mailto:lehlohonolompl@gmail.com" class="footer__link">lehlohonolompl@gmail.com</a>
+                <ul class="social-list">
+
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com/LehlohonoloMopeli">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/lehlohonolo-mopeli-3a19b0163/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </footer>
+        
+
+
+
+    </body>
+</html>
+
+
+
+<!--https://scrimba.com/learn/learnreact-->
